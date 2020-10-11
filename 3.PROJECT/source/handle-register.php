@@ -42,11 +42,11 @@ if (empty($error)) {
         $hashed_passcode = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $activation_code = substr(md5(uniqid(rand(), true)), 16, 16);
         /**
-         * INSERT INTO `users` (`id`, `username`, `password`, `email`, `create_at`, `role`, `activaton_code`, `status`) 
-         * VALUES (NULL, 'test', '12345', 'test@gmail.com', current_timestamp(), 'user', 'dasdgdhfdhghgfhfg', '0')
+         * INSERT INTO `users` (`id`, `username`, `email`, `role`, `password`, `created_at`, `updated_at`, `activation_code`, `status`)
+         *  VALUES (NULL, 'dadsa', 'dasdas', 'user', '', current_timestamp(), NULL, 'asdadas', '0')
          */
-        $sql = "INSERT INTO `users` (`id`, `username`, `password`, `email`, `create_at`, `role`, `activation_code`, `status`) 
-        VALUES (NULL, '$username', '$hashed_passcode', '$email', NOW(), '$role', '$activation_code', '0')";
+        $sql = "INSERT INTO `users` (`id`, `username`, `email`, `role`, `password`, `created_at`, `activation_code`, `status`) 
+        VALUES (NULL, '$username',  '$email',  '$role', '$hashed_passcode', NOW(), '$activation_code', '0')";
         if (mysqli_query($conn, $sql)) {
             require_once "contact.php";
             $m = new sendMail();
