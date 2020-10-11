@@ -1,8 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') {
-    header("Location:admin/admin.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,16 +58,24 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') {
                         </ul>
                         <?php
 
-                        if (isset($_SESSION['user']) && $_SESSION['user']['role'] !== 'admin') {
+                        if (isset($_SESSION['user'])) {
 
                         ?>
                             <div class="nav-item dropdown auth">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <?php echo $_SESSION['user']['username'] ?>
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a href="logout.php" class="dropdown-item">Dang xuat</a>
 
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <?php
+                                    if ($_SESSION['user']['role'] == 'admin') {
+                                    ?>
+                                        <a href="admin/admin.php" class="dropdown-item">Dashbrod</a>
+                                    <?php
+                                    }
+                                    ?>
+
+                                    <a href="logout.php" class="dropdown-item">Dang xuat</a>
                                 </div>
                             </div>
 

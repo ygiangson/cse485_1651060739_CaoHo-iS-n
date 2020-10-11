@@ -28,9 +28,10 @@ if (empty($errors)) {
             session_start();
             $_SESSION['user'] = $row;
             $role = $_SESSION['user']['role'];
-            if ($role === 'user')
-                header("Location:index.php");
-            else header("Location:admin/admin.php");
+            // if ($role === 'user')
+            //     header("Location:index.php");
+            // else header("Location:admin/admin.php");
+            header("Location:index.php");
             exit();
         } else {
             echo $_POST['password'];
