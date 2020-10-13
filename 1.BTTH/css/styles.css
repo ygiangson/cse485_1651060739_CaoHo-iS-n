@@ -1,0 +1,13 @@
+.action a{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.action a i{
+    font-size: 18iem;
+}
+
+.divider{
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+}
