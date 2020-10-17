@@ -57,10 +57,10 @@ if (empty($error)) {
             sau đây: <a href='http://localhost/cse485_1651060739_CaoHoaiSon/3.PROJECT/source/active.php?code=" . $activation_code . "'>Click Here</a>";
 
             //dùng mail test, đừng dùng mail chính thức
-            $from = "sonch62@wru.vn";
+            $from = "ygiangson@gmail.com";
 
             //pass email gmail
-            $p = "chson2798"; //thay_mat_khau_cua_ban_vao_day
+            $p = "Chson2798"; //thay_mat_khau_cua_ban_vao_day
             $m->sendMailFromLocalhost($to, $from, $tennguoigui = "Web2Code2Vn", $tieudethu, $noidungthu, $from, $p, $error);
             header("Location: register-page-successfully.php");
             exit();
