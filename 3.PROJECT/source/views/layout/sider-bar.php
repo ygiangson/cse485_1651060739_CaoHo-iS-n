@@ -25,6 +25,8 @@ if (!isset($_SESSION['user'])) {
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+    
 
 
 </head>
@@ -72,10 +74,17 @@ if (!isset($_SESSION['user'])) {
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
-                    <i class="far fa-newspaper"></i>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#list_news" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fab fa-wpforms"></i>
                     <span>Tin tức</span>
                 </a>
+                <div id="list_news" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Quản lý tin tức:</h6>
+                        <a class="collapse-item" href="index.php?controller=News">Bài viết</a>
+                        <a class="collapse-item" href="utilities-border.html">Danh mục</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -211,7 +220,7 @@ if (!isset($_SESSION['user'])) {
                                     <i class="fas fa-home fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Trang chủ
                                 </a>
-                               
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
