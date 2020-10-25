@@ -46,7 +46,6 @@ class NewsModel extends Model
         $sql = "UPDATE `news` 
                 SET `title` = '$title', `content` = '$content',  `hot` = '$hot', `image` = '$img', `published` = '$public',  `update_at` = NOW(), `idCategory` = '$category', `idUser` = '$userID' 
                 WHERE `news`.`id` = $idNews";
-                echo $sql;
         $result = mysqli_query($this -> connection, $sql);
         return $result;
     }

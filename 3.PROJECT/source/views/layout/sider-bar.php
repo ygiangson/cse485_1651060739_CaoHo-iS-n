@@ -82,7 +82,7 @@ if (!isset($_SESSION['user'])) {
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản lý tin tức:</h6>
                         <a class="collapse-item" href="index.php?controller=News">Bài viết</a>
-                        <a class="collapse-item" href="utilities-border.html">Danh mục</a>
+                        <a class="collapse-item" href="index.php?controller=category">Danh mục</a>
                     </div>
                 </div>
             </li>
