@@ -56,7 +56,6 @@ class HomeController
         $email = $_POST['txt-email'];
         $password = $_POST['txt-password'];
         $confirm_passwrod = $_POST['txt-confirm-password'];
-        $role = $_POST['role'];
         $error = array();
 
 
@@ -90,14 +89,14 @@ class HomeController
             } else {
                 $hashed_passcode = password_hash($password, PASSWORD_DEFAULT);
                 $activation_code = substr(md5(uniqid(rand(), true)), 16, 16);
-                if ($homeModel->handle_register($username, $email, $role, $hashed_passcode, $activation_code)) {
+                if ($homeModel->handle_register($username, $email, 'user', $hashed_passcode, $activation_code)) {
                     require_once "assets/lib/contact.php";
                     $m = new sendMail();
 
                     $to = $email;
                     $tieudethu = "[CSE] Please verify your email address";
                     $noidungthu = "Bạn đã đăng kí tài khoản tại Web2Code2VN, để sử dụng tài khoản, vui lòng nhấp vào liên kết
-            sau đây: <a href='http://localhost/testMVC/index.php?action=active&code=" . $activation_code . "'>Click Here</a>";
+            sau đây: <a href='http://localhost/cse485_1651060739_CaoHoaiSon/3.PROJECT/source/index.php?action=active&code=" . $activation_code . "'>Click Here</a>";
 
                     //dùng mail test, đừng dùng mail chính thức
                     $from = "ygiangson@gmail.com";

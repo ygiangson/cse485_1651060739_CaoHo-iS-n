@@ -3,7 +3,8 @@ include("views/layout/sider-bar.php")
 ?>
 
 <main class="mx-auto w-75">
-    <a name="" id="" class="btn btn-primary my-3" href="#" role="button">Thêm người dùng</a>
+    <h4 class="text-dark d-flex justify-content-center">Danh sách Quản Trị Viên</h4>
+    <a name="" id="" class="btn btn-primary my-3" href="#" role="button">Thêm quản trị viên</a>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -11,30 +12,23 @@ include("views/layout/sider-bar.php")
                 <th scope="col">Tài khoản</th>
                 <th scope="col">email</th>
                 <th scope="col">Trạng kích hoạt</th>
-                <th scope="col">Vai trò</th>
-                <th scope="col">Sửa</th>
-                <th scope="col">Xóa</th>
             </tr>
         </thead>
         <tbody>
             <?php
-
-            while ($row = mysqli_fetch_assoc($result)) {
+            if (mysqli_num_rows($result) == 0) {
+                echo "<td> Khong dieu</td>";
+            } else
+                while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <tr>
                     <th scope="row"><?php echo $row['id'] ?></th>
                     <td><?php echo $row['username'] ?></td>
                     <td><?php echo $row['email'] ?></td>
                     <td><?php echo $row['status'] == 0 ?  'Chưa kích hoạt' :  'Đã kích hoạt' ?></td>
-                    <td>
-                        <?php echo $row['role'] === 'user' ? 'Người dùng' : 'admin' ?>
-
-                    </td>
-                    <td><a href="#"><i class="fas fa-edit"></i></a></td>
-                    <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
             <?php
-            }
+                }
             ?>
 
 

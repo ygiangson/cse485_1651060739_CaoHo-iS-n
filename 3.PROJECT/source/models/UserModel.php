@@ -17,4 +17,13 @@ class UserModel extends Model
         $result = mysqli_query($this ->connection, $sql);
         return $result;
     }
+
+    //get user with role user
+    public function getUsersWithRole($role)
+    {
+        $sql ="SELECT * FROM users WHERE `role` = '$role'";
+        $result = mysqli_query($this -> connection, $sql);
+        return $result;
+    }
+
 }

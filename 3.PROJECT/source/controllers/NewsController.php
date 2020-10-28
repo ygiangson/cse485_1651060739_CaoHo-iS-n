@@ -87,7 +87,9 @@ class NewsController
                 $errors = array();
                 $title = $_POST['txt-title'];
                 $content = $_POST['txt-content'];
+                $oldImage = $_POST['sp-old'];
                 $img = $_FILES['txt-img'];
+                $nameImg = $img['name'];
                 $category = $_POST['s-category'];
                 $hot = $_POST['ck-hot'];
                 $public = $_POST['ck-public'];
@@ -108,10 +110,17 @@ class NewsController
                 if (empty(($category))) {
                     $errors[] = 'You forgot chorme image.';
                 }
+                if($nameImg != ""){
+                    move_uploaded_file($img['tmp_name'], 'assets/img/' . $img['name']);
+                    $nameImg = $img['name'];
+                
+                }else{
+                    $nameImg = $oldImage;
+                }
     
                 if (empty($errors)) {
                     echo 'ko co loi';
-                    $result = $news -> editNews($id,$title,$content,$hot,$img['name'],$public,$userID,$category);
+                    $result = $news -> editNews($id,$title,$content,$hot,$nameImg,$public,$userID,$category);
                     if($result){
                         header("Location: index.php?controller=news");
                     }else{

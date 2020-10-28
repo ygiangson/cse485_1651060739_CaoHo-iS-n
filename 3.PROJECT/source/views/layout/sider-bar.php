@@ -67,10 +67,17 @@ if (!isset($_SESSION['user'])) {
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php?controller=user">
+                <a data-toggle="collapse" data-target="#user" aria-expanded="true" aria-controls="collapseUtilities" class="nav-link collapsed" href="index.php?controller=user">
                     <i class="fas fa-user"></i>
                     <span>Người dùng</span>
                 </a>
+                <div id="user" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Quản lý người dùng:</h6>
+                        <a class="collapse-item" href="index.php?controller=user&action=getListUser">Thành viên</a>
+                        <a class="collapse-item" href="index.php?controller=user&action=getListAdmin">Admin</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">

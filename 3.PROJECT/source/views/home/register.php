@@ -33,20 +33,6 @@
           </div>
 
         </div>
-        <!-- radio button -->
-        <div class="container w-100 ml-3, mx-3">
-          <div class="form-check-inline">
-            <div class="form-check-inline">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" value="user" name="role" checked>user
-              </label>
-            </div>
-            <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="admin" name="role">admin
-            </label>
-          </div>
-
-        </div>
 
         <!-- button sign -->
         <div class="modal-footer d-flex justify-content-center">
