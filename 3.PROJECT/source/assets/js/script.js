@@ -1,3 +1,12 @@
+
+// $(document).ready(function(){
+//   $("#item-news").hover(function(){
+//     $("#drop-news").removeClass("d-none")
+//   },function(){
+//     $("#drop-news").addClass("d-none")
+//   })
+//  })
+ 
 ClassicEditor.create(document.querySelector("#body"), {
   toolbar: [
     "heading",
@@ -30,16 +39,6 @@ ClassicEditor.create(document.querySelector("#body"), {
   console.log(error);
 });
 
-// $(document).ready(()=>{
-//   $('.btn-delete').click(()=>{
-//     alert('alo')
-//   })
-// })
-function handleClose(){
-  alert('aloooo');
-  // window.history.go(-1); 
-  // return false;
-}
 
 
 

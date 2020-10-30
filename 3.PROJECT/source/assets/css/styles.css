@@ -25,13 +25,15 @@ a{
     text-decoration: none;
 }
 /* nav */
+.drop-category>a{
+    color: black !important;
+}
 .navbar ul li a{
     color: white !important;
 }
 .navbar{
     margin-bottom: 15px;
 }
-
 
 .auth>a{
     color: white;

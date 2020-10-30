@@ -28,18 +28,13 @@ require_once("views/layout/header-home.php");
                         <label class="mx-auto font-weight-bold" for="my-input">Tin nổi bật</label>
                     </div>
                     <ul class="mx-2 py-2">
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
-                        <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Thông báo về việc phòng chống dịch Covid-19 </a></li>
+                        <?php
+                        while ($rowRand = mysqli_fetch_assoc($listHotNews)) {
+                            $id = $rowRand['id'];
+                            $title = $rowRand['title'];
+                            echo "<li><a href='index.php?controller=news&action=detailNews&id=" . $id . "'><i class='fas fa-angle-right text-secondary my-2'></i> $title </a></li>";
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
@@ -50,17 +45,14 @@ require_once("views/layout/header-home.php");
                     <label class="font-weight-bold px-3" for="my-input">Thông báo chung</label>
                 </div>
                 <ul class="mx-2 py-2 pl-3">
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                   
+                    <?php
+                    while ($rowRand = mysqli_fetch_assoc($listNewsRand)) {
+                        $id = $rowRand['id'];
+                        $title = $rowRand['title'];
+                        echo "<li><a href='index.php?controller=news&action=detailNews&id=" . $id . "'><i class='fas fa-angle-right text-secondary my-2'></i> $title </a></li>";
+                    }
+                    ?>
+
                 </ul>
             </div>
             <div class="new-news mt-2">
@@ -68,12 +60,15 @@ require_once("views/layout/header-home.php");
                     <label class="font-weight-bold px-3" for="my-input">Thông báo mới nhất</label>
                 </div>
                 <ul class="mx-2 py-2 pl-3">
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                    <li><a href=""><i class="fas fa-angle-right text-secondary"></i> Làm thủ tục nhập học, gặp mặt giảng viên và hướng dẫn học online cho tân sinh viên VB2 chính quy K2019 - 10/03/2020 - 15:28 </a></li>
-                   
+                    <?php
+                    while ($rowRand = mysqli_fetch_assoc($listLatestNews)) {
+                        $id = $rowRand['id'];
+                        $title = $rowRand['title'];
+                        echo "<li><a href='index.php?controller=news&action=detailNews&id=" . $id . "'><i class='fas fa-angle-right text-secondary my-2'></i> $title </a></li>";
+                    }
+                    ?>
+
+
                 </ul>
             </div>
         </div>

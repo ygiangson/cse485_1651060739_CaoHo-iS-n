@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,16 +15,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
 
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+
     <title>Title</title>
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
-        <?php
+            <?php
             include("views/home/login.php");
             include("views/home/register.php");
-        ?>
+            ?>
             <!-- logo -->
             <div class="col-md-12">
                 <div class="container">
@@ -44,8 +46,16 @@
                             <li style="display: flex; align-items: center" class="nav-item">
                                 <a href="index.php"><i style="color: white; font-size: 20px" class="fa fa-home"></i></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Tin tức</a>
+    
+                            <li class="dropdown">
+                                <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Tin tức
+                                </a>
+                                <div class="dropdown-menu drop-category" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#">Diễn đàn</a>
