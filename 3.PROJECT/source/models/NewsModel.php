@@ -47,14 +47,14 @@ class NewsModel extends Model
         $sql = "UPDATE `news` 
                 SET `title` = '$title', `content` = '$content',  `hot` = '$hot', `image` = '$img', `published` = '$public',  `update_at` = NOW(), `idCategory` = '$category', `idUser` = '$userID' 
                 WHERE `news`.`id` = $idNews";
-        $result = mysqli_query($this -> connection, $sql);
+        $result = mysqli_query($this->connection, $sql);
         return $result;
     }
     // lay ngau nhien 5 thong bao chung
     public function getNewsRand()
     {
         $sql = "SELECT * FROM news WHERE published = 1 AND hot = 0 ORDER BY RAND() LIMIT 12";
-        $result = mysqli_query($this -> connection, $sql);
+        $result = mysqli_query($this->connection, $sql);
         return $result;
     }
 
@@ -62,13 +62,21 @@ class NewsModel extends Model
     public function getLatestNews()
     {
         $sql = "SELECT * FROM news WHERE published = 1 AND hot = 0 ORDER BY id DESC LIMIT 5";
-        $result = mysqli_query($this -> connection, $sql);
+        $result = mysqli_query($this->connection, $sql);
         return $result;
     }
     public function getHotNews()
     {
         $sql = "SELECT * FROM news WHERE hot = 1 ORDER BY RAND() LIMIT 7";
-        $result = mysqli_query($this -> connection, $sql);
+        $result = mysqli_query($this->connection, $sql);
+        return $result;
+    }
+
+    public function updateView($view,$id)
+    {
+        $sql = "UPDATE `news` SET `view` = '$view' WHERE `news`.`id` = $id";
+        // echo $sql;
+        $result = mysqli_query($this->connection,$sql);
         return $result;
     }
 }

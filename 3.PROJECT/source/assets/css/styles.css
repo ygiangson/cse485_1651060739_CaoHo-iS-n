@@ -26,9 +26,9 @@ a{
 }
 /* nav */
 .drop-category>a{
-    color: black !important;
+    color: #003478 !important;
 }
-.navbar ul li a{
+.navbar ul li>a{
     color: white !important;
 }
 .navbar{
@@ -75,6 +75,10 @@ a{
 .btn-login{
     width: 100%;
 }
+.content img{
+    width:100%
+}
+
 /*  */
 .hot-news{
     /* height: 500px; */

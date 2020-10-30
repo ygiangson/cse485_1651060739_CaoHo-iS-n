@@ -135,4 +135,28 @@ class NewsController
        
         require("views/news/editNews.php");
     }
+    public function detailNews()
+    {
+        $news = new NewsModel();    
+        $category =new CategoryModel(); 
+        // lay thong tin hot
+        $listHotNews =$news -> getHotNews();
+        // lay danh sách danh  mục
+        $listCategory = $category -> getAllCategoryNews();
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $detailNews = mysqli_fetch_assoc($news -> selectOneNews($id));
+            
+            $view = intval($detailNews['view']);
+            $updateView = $news -> updateView($view+1,$id);
+
+            if(!$updateView){
+                echo "<script type='text/javascript'>alert('xay ra loi!!');</script>";
+            }
+        }
+       
+        require "views/news/detailNews.php";
+    }
+
+
 }

@@ -1,6 +1,7 @@
 <?php
 require("models/HomeModel.php");
 require("models/NewsModel.php");
+require ("models/CategoryModel.php");
 session_start();
 class HomeController
 {
@@ -8,9 +9,11 @@ class HomeController
     public function index()
     {
         $news = new NewsModel();
+        $category =new CategoryModel();
         $listNewsRand = $news -> getNewsRand();
         $listLatestNews = $news -> getLatestNews();
         $listHotNews =$news -> getHotNews();
+        $listCategory = $category -> getAllCategoryNews();
 
         // Chuyen cho View xu ly;
         require("views/home/index.php");

@@ -46,15 +46,19 @@
                             <li style="display: flex; align-items: center" class="nav-item">
                                 <a href="index.php"><i style="color: white; font-size: 20px" class="fa fa-home"></i></a>
                             </li>
-    
+
                             <li class="dropdown">
                                 <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Tin tức
                                 </a>
                                 <div class="dropdown-menu drop-category" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <?php
+                                    while ($rowCategory = mysqli_fetch_assoc($listCategory)) {
+                                        $id = $rowCategory['id'];
+                                        $title = $rowCategory['name'];
+                                        echo "<a class='dropdown-item' href=''>$title</a>";
+                                    }
+                                    ?>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
