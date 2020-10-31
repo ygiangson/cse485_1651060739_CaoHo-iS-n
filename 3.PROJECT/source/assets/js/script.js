@@ -1,11 +1,9 @@
 
-// $(document).ready(function(){
-//   $("#item-news").hover(function(){
-//     $("#drop-news").removeClass("d-none")
-//   },function(){
-//     $("#drop-news").addClass("d-none")
-//   })
-//  })
+$(document).ready(function(){
+  $("#idPage").click(function(){
+    alert("lô")
+  })
+ })
  
 ClassicEditor.create(document.querySelector("#body"), {
   toolbar: [

@@ -53,10 +53,15 @@
                                 </a>
                                 <div class="dropdown-menu drop-category" aria-labelledby="dropdownMenuButton">
                                     <?php
+                                    if (!isset($iCate)) $isCate = -1;
                                     while ($rowCategory = mysqli_fetch_assoc($listCategory)) {
                                         $id = $rowCategory['id'];
                                         $title = $rowCategory['name'];
-                                        echo "<a class='dropdown-item' href=''>$title</a>";
+
+
+                                    ?>
+                                        <a style="<?php echo $idCate == $id ? 'color: #FFFFFF !important;' : ''  ?>" class="dropdown-item <?php echo $idCate == $id ? 'active' : '' ?>" href='index.php?controller=news&action=listNewsWithCategory&idCate=<?php echo $id ?>'><?php echo $title ?></a>;
+                                    <?php
                                     }
                                     ?>
                                 </div>

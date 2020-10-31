@@ -5,42 +5,9 @@ require_once("views/layout/header-home.php");
 <main>
     <!-- phần body -->
     <div class="row container main">
-        <div class="col-md-3 body-left ">
-            <div class="row">
-                <div class="col-md-12 search-box">
-                    <div class="form-group w-100">
-                        <div class="d-flex justify-content mt-2 header-search">
-                            <label class="mx-auto font-weight-bold" for="my-input">Tìm kiếm</label>
-                        </div>
-                        <form class="form-inline active-purple-3 active-purple-4 my-2 body-search">
-
-                            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
-                            <a class="mx-2" href="#"><i class="fas fa-search text-secondary" aria-hidden="true"></i></a>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row hot-news mt-3 ">
-                <div class="col-md-12 p-0">
-                    <div class="d-flex justify-content mt-2 header-search">
-                        <label class="mx-auto font-weight-bold" for="my-input">Tin nổi bật</label>
-                    </div>
-                    <ul class="mx-2 py-2">
-                        <?php
-                        while ($rowRand = mysqli_fetch_assoc($listHotNews)) {
-                            $id = $rowRand['id'];
-                            $title = $rowRand['title'];
-                            echo "<li><a href='index.php?controller=news&action=detailNews&id=" . $id . "'><i class='fas fa-angle-right text-secondary my-2'></i> $title </a></li>";
-                        }
-                        ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div style="border: 1px solid #ccc; border-left: 0px;" class="col-md-9 body-main">
-            <h4 style="text-align: center;"><?php echo $detailNews['title'] ?></h4>
+        <?php require_once 'views/layout/home-left.php'?>
+        <div class="col-md-9 body-main p-3">
+            <h4><?php echo $detailNews['title'] ?></h4>
             <div class="row mx-3 my-4">
                 <div class="col-md-10"><?php echo $detailNews['create_at'] ?></div>
                 <div class="col-md-2"><i class="fas fa-eye"></i> <?php echo $view ?></div>
@@ -50,7 +17,21 @@ require_once("views/layout/header-home.php");
                     <?php echo $detailNews['content'] ?>
                 </div>
             </div>
+
+            <div style="border-top: 1px solid #cccccc;" class="suggest-news pt-3">
+                <h4>Các tin khác</h4>
+                <ul style="list-style-type: square;" class="pl-5">
+                    <?php
+                    while ($rowSuggest = mysqli_fetch_assoc($listSuggestNews)) {
+                        $title = $rowSuggest['title'];
+                        $id = $rowSuggest['id'];
+                        echo " <li><a href='index.php?controller=news&action=detailNews&id=$id'>$title</a></li>";
+                    }
+                    ?>
+                </ul>
+            </div>
         </div>
+
     </div>
 
 </main>
