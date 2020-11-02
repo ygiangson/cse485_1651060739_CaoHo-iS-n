@@ -1,5 +1,5 @@
 <?php
-require("models/forum/BigCategoryModel.php");
+require("models/forum/ForumCategoryModel.php");
 session_start();
 class ForumController
 {
