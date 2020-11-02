@@ -191,6 +191,8 @@ class NewsController
     public function searchNews()
     {
         if (isset($_GET['key'])) {
+            $category = new CategoryModel();
+            $listCategory = $category->getAllCategoryNews();    
             $key = $_GET['key'];
             $news = new NewsModel();
             $pageNumber = 5;

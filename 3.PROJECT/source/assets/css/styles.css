@@ -107,6 +107,11 @@ a{
     font-size: 18px;
 }
 
+.big-category{
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    padding: 10px 0px 7px 5px;
+}
 
 /* footer */
 

@@ -32,8 +32,8 @@ require_once("views/layout/header-home.php");
                                 <a href="index.php?controller=news&action=detailNews&id=<?php echo $rowNews['id'] ?>">
                                     <h5><?php echo $rowNews['title'] ?></h5>
                                 </a>
-                                <p style="font-size: 20px;"><?php echo substr($rowNews['content'], 0, 170) . '...' ?></p>
-                                <a style="font-style: italic;font-size: 20px;" class="d-flex justify-content-end w-100" href="index.php?controller=news&action=detailNews&id=<?php echo $rowNews['id'] ?>"> <i style="font-size: 15px;" class="fas fa-chevron-right pt-2 mr-2"></i> Xem chi tiết</a>
+                                <p style="font-size: 20px;"><?php echo substr($rowNews['content'], 0, 150) . '...' ?></p>
+                                <a style="font-style: italic;font-size: 20px;" class="d-flex justify-content-end w-100 my-5" href="index.php?controller=news&action=detailNews&id=<?php echo $rowNews['id'] ?>"> <i style="font-size: 15px;" class="fas fa-chevron-right pt-2 mr-2"></i> Xem chi tiết</a>
                             </div>
                         </div>
                     </li>

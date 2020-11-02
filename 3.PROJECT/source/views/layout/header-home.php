@@ -67,7 +67,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="#">Diễn đàn</a>
+                                <a class="nav-link" href="index.php?controller=forum">Diễn đàn</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#">Giới thiệu</a>
