@@ -4,7 +4,7 @@ include("views/layout/sider-bar.php")
 
 <main class="mx-auto w-75">
     <h4 class="text-dark d-flex justify-content-center">Danh sách Thành Viên</h4>
-    <a name="" id="" class="btn btn-primary my-3" href="#" role="button">Thêm thành viên</a>
+    <a name="" id="" class="btn btn-primary my-3" href="index.php?controller=user&action=addUser" role="button">Thêm thành viên</a>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>

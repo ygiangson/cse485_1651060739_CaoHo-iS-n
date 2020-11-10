@@ -1,9 +1,9 @@
 
-$(document).ready(function(){
-  $("#idPage").click(function(){
-    alert("lô")
-  })
- })
+// $(document).ready(function(){
+//   $("#idPage").click(function(){
+//     alert("lô")
+//   })
+//  })
  
 ClassicEditor.create(document.querySelector("#body"), {
   toolbar: [

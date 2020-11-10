@@ -1,6 +1,6 @@
 <?php
 require_once 'models/Model.php';
-class BigCategoryModel extends Model
+class ForumCategoryModel extends Model
 {
     public $connection;
 
@@ -10,7 +10,7 @@ class BigCategoryModel extends Model
         $this->connection = $this->openConnect();
     }
     // get all big category
-    public function getAllBigCategory()
+    public function getAllCategory()
     {
         $sql = "SELECT * FROM forum_category";
         $result = mysqli_query($this->connection,$sql);

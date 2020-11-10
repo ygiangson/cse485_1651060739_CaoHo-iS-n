@@ -17,6 +17,7 @@
 
     <link href="assets/css/animate.min.css" rel="stylesheet">
     <link href="assets/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
 
     <title>Title</title>
 </head>
