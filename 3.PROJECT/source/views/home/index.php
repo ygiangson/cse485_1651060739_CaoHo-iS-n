@@ -9,7 +9,7 @@ require_once("views/layout/header-home.php");
         <div class="col-md-9 body-main">
             <div class="common-news">
                 <div class="d-flex justify-content mt-2 header-search">
-                    <label class="font-weight-bold px-3" for="my-input">Thông báo chung</label>
+                    <label class="font-weight-bold px-3" for="my-input">Tin tức chung</label>
                 </div>
                 <ul class="mx-2 py-2 pl-3">
                     <?php
@@ -24,7 +24,7 @@ require_once("views/layout/header-home.php");
             </div>
             <div class="new-news mt-2">
                 <div class="d-flex justify-content mt-2 header-search">
-                    <label class="font-weight-bold px-3" for="my-input">Thông báo mới nhất</label>
+                    <label class="font-weight-bold px-3" for="my-input">Tin tức mới nhất</label>
                 </div>
                 <ul class="mx-2 py-2 pl-3">
                     <?php

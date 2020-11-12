@@ -34,7 +34,6 @@ class ForumController
             $topic = new TopicModel();
             $post = new PostModel();
             $listTopic = $topic->getTopicByCategory($idCate);
-           
         }
         require("views/forum/listTopic.php");
     }
@@ -42,11 +41,24 @@ class ForumController
     public function addTopic()
     {
         # code...
-        if(isset($_POST['btn-add-topic'])){
-            $title = $_POST['txt-title'];
-            $content = $_POST['txt-content'];
-            
+        if (isset($_GET['idCate'])) {
+            $idCate = $_GET['idCate'];
+            if (isset($_POST['btn-add-topic'])) {
+                echo 'aloo';
+                $idCate = $_GET['idCate'];
+                $userID = $_SESSION['user']['id'];
+                $title = $_POST['txt-title'];
+                $content = $_POST['txt-content'];
+                $topic = new TopicModel();
+                $insertTopic = $topic->addTopic($title, $content, 1, $userID, $idCate);
+                if ($insertTopic) {
+                    header("Location:index.php?controller=forum&action=listTopic&idCate=".$idCate);
+                } else {
+                    echo "<script type='text/javascript'>alert('Nhap day du thong tin!');javascript:history.go(-1)</script>";
+                }
+            } 
         }
+
         require("views/forum/addTopic.php");
     }
 }
