@@ -103,7 +103,7 @@ if (!isset($_SESSION['user'])) {
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản lý diễn đàn:</h6>
-                        <a class="collapse-item" href="#">Chủ đề</a>
+                        <a class="collapse-item" href="index.php?controller=forum&action=listTopicAdmin">Chủ đề</a>
                         <a class="collapse-item" href="utilities-border.html">Danh mục</a>
                         <a class="collapse-item" href="utilities-animation.html">Danh mục con</a>
                         <a class="collapse-item" href="utilities-other.html">Other</a>

@@ -61,4 +61,13 @@ class ForumController
 
         require("views/forum/addTopic.php");
     }
+
+    // forum trong quan tri
+    public function listTopicAdmin()
+    {
+        $topic = new TopicModel();
+        $listTopic = $topic -> getTopicForAdmin();
+
+        require("views/forum/admin/topic/ListTopic.php");
+    }
 }
