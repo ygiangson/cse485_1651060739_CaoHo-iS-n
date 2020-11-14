@@ -38,7 +38,30 @@ class UserModel extends Model
     {
         $sql = "INSERT INTO users (id, username, email, role, password, created_at, activation_code, status)
          VALUES (NULL, '$username', '$email', '$role', '$password', NOW(), '$activation_code', '$status')";
+         echo $sql;
         return $result = mysqli_query($this -> connection,$sql);
+    }
+    public function selectOnerUser($idUser)
+    {
+        $sql = "SELECT * FROM users WHERE id = $idUser";
+        $result = mysqli_query($this -> connection, $sql);
+        return $result;
+    }
+    public function updateUser($username,$email,$status,$role,$userID)
+    {
+        $sql = "UPDATE `users` 
+                SET `username` = '$username', `email` = '$email', `status` = '$status', `role` = '$role'
+                WHERE `users`.`id` = '$userID'";
+                // echo $sql;
+        $result = mysqli_query($this ->connection ,$sql);
+        return $result;
+    }
+    public function deleteUser($idUser)
+    {
+        $sql = "DELETE FROM `users` WHERE `users`.`id` = $idUser";
+        echo $sql;
+        $result = mysqli_query($this -> connection, $sql);
+        return $result;
     }
 
 

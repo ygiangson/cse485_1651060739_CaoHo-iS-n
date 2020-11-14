@@ -13,7 +13,7 @@ include("views/layout/sider-bar.php")
                 <th scope="col">email</th>
                 <th scope="col">Trạng kích hoạt</th>
                 <th scope="col">Sửa</th>
-                <th scope="col">Xóa</th>
+              
             </tr>
         </thead>
         <tbody>
@@ -28,8 +28,7 @@ include("views/layout/sider-bar.php")
                     <td><?php echo $row['username'] ?></td>
                     <td><?php echo $row['email'] ?></td>
                     <td><?php echo $row['status'] == 0 ?  'Chưa kích hoạt' :  'Đã kích hoạt' ?></td>
-                    <td><a href="#"><i class="fas fa-edit"></i></a></td>
-                    <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+                    <td><a href="index.php?controller=user&action=editUser&idUser=<?php echo $row['id']?>"><i class="fas fa-edit"></i></a></td>
                 </tr>
             <?php
                 }
